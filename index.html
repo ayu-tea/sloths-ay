@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 100px;
+            padding: 20px;
+            background: white;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Fact Generator</h1>
+        <p id="fact">Click the button to see a random fact!</p>
+        <button onclick="generateFact()">Get Random Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Sloths can hold their breath for up to 40 minutes.",
+            "Sloths only poop once a week.",
+            "Sloths have extra neck vertebrae, allowing them to rotate their heads up to 270 degrees.",
+            "Algae grows in sloth fur, helping them blend in with trees.",
+            "A sloth’s metabolism is so slow that it can take up to a month to digest food.",
+            "Sloths are excellent swimmers and can move three times faster in water than on land.",
+            "The ancestors of sloths were giant ground sloths that grew up to 20 feet long.",
+            "Sloths sleep for about 15 to 20 hours a day.",
+            "Sloths have a very low body temperature, averaging around 30°C (86°F).",
+            "Despite their slow movements, sloths have sharp claws that help them defend against predators."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById("fact").textContent = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
