@@ -1,46 +1,39 @@
+Certainly! Below is the combined code for the HTML, CSS, and JavaScript in a single HTML file. You can simply copy this code into a file named `index.html` and open it in a web browser to see the random facts generator in action.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Fact Generator</title>
+    <title>Random Facts Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
         }
 
         .container {
-            margin-top: 100px;
-            padding: 20px;
+            text-align: center;
             background: white;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        p {
-            font-size: 18px;
-            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         button {
-            background-color: #007bff;
-            color: white;
-            border: none;
             padding: 10px 20px;
             font-size: 16px;
-            cursor: pointer;
+            border: none;
             border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
         }
 
         button:hover {
@@ -50,29 +43,35 @@
 </head>
 <body>
     <div class="container">
-        <h1>Random Fact Generator</h1>
-        <p id="fact">Click the button to see a random fact!</p>
-        <button onclick="generateFact()">Get Random Fact</button>
+        <h1>Random Facts Generator</h1>
+        <p id="fact"></p>
+        <button id="generate-button">Generate Random Fact</button>
     </div>
-
     <script>
         const facts = [
             "Sloths can hold their breath for up to 40 minutes.",
-            "Sloths only poop once a week.",
-            "Sloths have extra neck vertebrae, allowing them to rotate their heads up to 270 degrees.",
-            "Algae grows in sloth fur, helping them blend in with trees.",
-            "A sloth’s metabolism is so slow that it can take up to a month to digest food.",
-            "Sloths are excellent swimmers and can move three times faster in water than on land.",
-            "The ancestors of sloths were giant ground sloths that grew up to 20 feet long.",
-            "Sloths sleep for about 15 to 20 hours a day.",
-            "Sloths have a very low body temperature, averaging around 30°C (86°F).",
-            "Despite their slow movements, sloths have sharp claws that help them defend against predators."
+            "Sloths are herbivores and primarily eat leaves.",
+            "There are two types of sloths: two-toed and three-toed.",
+            "Sloths move very slowly, averaging about 0.24 km/h.",
+            "Sloths can live up to 20 years in the wild.",
+            "Some sloths are threatened due to habitat loss.",
+            "Sloths have a slow metabolism and can take a month to digest food.",
+            "The fur of sloths often hosts green algae.",
+            "Sloths are surprisingly good swimmers.",
+            "Sloths are generally solitary animals."
         ];
 
-        function generateFact() {
+        document.getElementById('generate-button').addEventListener('click', function() {
             const randomIndex = Math.floor(Math.random() * facts.length);
-            document.getElementById("fact").textContent = facts[randomIndex];
-        }
+            document.getElementById('fact').innerText = facts[randomIndex];
+        });
     </script>
 </body>
 </html>
+```
+
+### Instructions to Run
+1. Copy the above code into a file named `index.html`.
+2. Open `index.html` in a web browser to see the random facts generator in action.
+
+When you click the "Generate Random Fact" button, a random fact will be displayed on the page. Enjoy!
